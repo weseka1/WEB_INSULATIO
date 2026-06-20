@@ -6,6 +6,9 @@ services:
     runtime: static
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
+    # Dominio pro — Render lo pre-registra; falta el CNAME en el DNS de wsk.com.ar
+    domains:
+      - insulatio.wsk.com.ar
     # SPA: cualquier ruta cae a index.html
     routes:
       - type: rewrite

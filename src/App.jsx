@@ -24,7 +24,6 @@ export default function App() {
       <main id="top">
         <Hero />
         <VideoShowcase />
-        <Clients />
         <Stats />
         <Services />
         <Materials />
@@ -34,6 +33,7 @@ export default function App() {
         <FireProtection />
         <Quote />
         <About />
+        <Clients />
         <Footer />
       </main>
       <div className="fx-hot" aria-hidden="true" />

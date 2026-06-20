@@ -1,0 +1,16 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.env
+.env.*
+!.env.example
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vite
+
+# notas internas (no van al repo público)
+_ESTADO_PAUSA.md
+_*.log

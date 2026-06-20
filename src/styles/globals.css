@@ -484,3 +484,28 @@ footer{border-top:1px solid var(--line);background:var(--bg);padding-top:clamp(7
 .lang-toggle button:not(.on):hover{color:var(--text)}
 .mm-lang{margin-top:22px}
 .mm-lang .lang-toggle button{font-size:14px;padding:9px 16px}
+
+/* ===== Servicios — grilla de contenedores (registro industrial) ===== */
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.section-head.center .eyebrow{justify-content:center}
+.section-head.center .eyebrow::after{content:"";width:28px;height:1px;background:var(--accent)}
+
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(40px,6vh,64px)}
+.svc-card{position:relative;text-align:center;padding:clamp(30px,3vw,42px) clamp(22px,2.4vw,30px);border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,var(--surface-2),var(--surface));box-shadow:var(--shadow-card),var(--inset-hi);overflow:hidden;transition:transform .5s var(--ease),border-color .5s,box-shadow .5s}
+.svc-card::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--accent);transition:width .5s var(--ease)}
+.svc-card:hover{transform:translateY(-6px);border-color:var(--line-2);box-shadow:var(--shadow-hover),var(--inset-hi)}
+.svc-card:hover::before{width:46px}
+.svc-idx{position:absolute;top:16px;right:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--muted-2)}
+.svc-ic{width:62px;height:62px;margin:0 auto 22px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(47,122,181,.10);border:1px solid var(--line-2);color:var(--accent-2);transition:background .4s,color .4s,border-color .4s,transform .5s var(--ease)}
+.svc-ic svg{width:28px;height:28px}
+.svc-card:hover .svc-ic{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-2px)}
+.svc-card h3{font-size:1.16rem;margin-bottom:12px;letter-spacing:-.01em}
+.svc-card p{font-size:14px;color:var(--muted);line-height:1.62;max-width:36ch;margin:0 auto}
+
+/* Contenedor CTA destacado (12ª celda) */
+.svc-card.cta{background:linear-gradient(180deg,rgba(47,122,181,.12),rgba(47,122,181,.035));border-color:rgba(47,122,181,.35);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.svc-card.cta .svc-ic{background:var(--accent);border-color:var(--accent);color:#fff}
+.svc-card.cta .btn{margin-top:20px}
+
+@media(max-width:960px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.svc-grid{grid-template-columns:1fr}.svc-card{padding:30px 24px}}

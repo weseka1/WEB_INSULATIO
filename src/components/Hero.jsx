@@ -1,10 +1,12 @@
 import { useEffect, useRef, lazy, Suspense } from 'react'
 import { Icon } from './Icons'
 import { thermal } from '../lib/thermal'
+import { useLang } from '../lib/i18n'
 
 const ThermoCanvas = lazy(() => import('./ThermoCanvas'))
 
 export default function Hero() {
+  const { t: tr } = useLang()
   const gaugeRef = useRef(null)
   const allowWebGL = typeof window !== 'undefined' &&
     !window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -122,18 +124,18 @@ export default function Hero() {
         <div className="grain" />
       </div>
       <div className="wrap">
-        <span className="eyebrow" data-reveal>Aislaciones térmicas · Servicios industriales</span>
-        <h1 data-reveal>Ingeniería en aislación térmica para <span className="thermal-text">calor</span> y <span className="thermal-text">frío</span>.</h1>
-        <p className="lead" data-reveal>Asesoramiento técnico, cálculo e instalación de aislaciones térmicas para procesos industriales y residenciales. Más de 30 años de experiencia en el ámbito nacional e internacional.</p>
+        <span className="eyebrow" data-reveal>{tr({ es: 'Aislaciones térmicas · Servicios industriales', en: 'Thermal insulation · Industrial services' })}</span>
+        <h1 data-reveal>{tr({ es: 'Ingeniería en aislación térmica para ', en: 'Engineering in thermal insulation for ' })}<span className="thermal-text">{tr({ es: 'calor', en: 'heat' })}</span>{tr({ es: ' y ', en: ' and ' })}<span className="thermal-text">{tr({ es: 'frío', en: 'cold' })}</span>.</h1>
+        <p className="lead" data-reveal>{tr({ es: 'Asesoramiento técnico, cálculo e instalación de aislaciones térmicas para procesos industriales y residenciales. Más de 30 años de experiencia en el ámbito nacional e internacional.', en: 'Technical advice, calculation and installation of thermal insulation for industrial and residential processes. Over 30 years of experience in the national and international market.' })}</p>
         <div className="hero-cta" data-reveal>
-          <a href="#cotizacion" className="btn btn-primary magnetic">Solicitar cotización<Icon name="arrow" /></a>
-          <a href="#obras" className="btn btn-ghost magnetic">Ver nuestros trabajos</a>
+          <a href="#cotizacion" className="btn btn-primary magnetic">{tr({ es: 'Solicitar cotización', en: 'Request a quote' })}<Icon name="arrow" /></a>
+          <a href="#obras" className="btn btn-ghost magnetic">{tr({ es: 'Ver nuestros trabajos', en: 'See our projects' })}</a>
         </div>
         <div className="hero-meta" data-reveal>
           <div className="thermo3d" ref={gaugeRef}>
             <div className="t3-stage">
-              <span className="cap l">Criogénico</span>
-              <span className="cap r">Alta temp.</span>
+              <span className="cap l">{tr({ es: 'Criogénico', en: 'Cryogenic' })}</span>
+              <span className="cap r">{tr({ es: 'Alta temp.', en: 'High temp.' })}</span>
               <div className="t3-bar">
                 <span className="t3-frost" />
                 <span className="t3-heat" />
@@ -143,7 +145,7 @@ export default function Hero() {
               <span className="t3-node m" />
               <span className="t3-node r" />
               <span className="lab l">−196 °C</span>
-              <span className="lab m">Rango industrial completo</span>
+              <span className="lab m">{tr({ es: 'Rango industrial completo', en: 'Full industrial range' })}</span>
               <span className="lab r">+600 °C</span>
             </div>
           </div>

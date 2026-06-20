@@ -23,8 +23,8 @@ export default function App() {
       <Navbar />
       <main id="top">
         <Hero />
-        <VideoShowcase />
         <Clients />
+        <VideoShowcase />
         <Stats />
         <Services />
         <Materials />

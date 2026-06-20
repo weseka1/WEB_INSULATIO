@@ -1,6 +1,8 @@
 import { stats } from '../data/services'
+import { useLang } from '../lib/i18n'
 
 export default function Stats() {
+  const { t } = useLang()
   return (
     <section className="stats">
       <div className="grid">
@@ -12,7 +14,7 @@ export default function Stats() {
               </span>
               {s.suffix && <small>{s.suffix}</small>}
             </div>
-            <div className="cap">{s.cap}</div>
+            <div className="cap">{t(s.cap)}</div>
           </div>
         ))}
       </div>

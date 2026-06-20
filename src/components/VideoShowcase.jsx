@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Icon } from './Icons'
+import { useLang } from '../lib/i18n'
 
 const SRC = '/assets/video/obra-promaiz-2026.mp4'
 const POSTER = '/assets/video/poster-promaiz.jpg'
@@ -11,6 +12,7 @@ const POSTER = '/assets/video/poster-promaiz.jpg'
  * El <video> no se descarga hasta el play (fachada con póster, lazy).
  */
 export default function VideoShowcase() {
+  const { t: tr } = useLang()
   const [playing, setPlaying] = useState(false)
   const cardRef = useRef(null)
   const vidRef = useRef(null)
@@ -65,8 +67,8 @@ export default function VideoShowcase() {
     <section className="section videoshow float" id="video">
       <div className="wrap">
         <div className="vs-head">
-          <span className="eyebrow" data-reveal>Obra en ejecución</span>
-          <h2 data-reveal>Planta Promaíz — registro de obra, Mayo 2026.</h2>
+          <span className="eyebrow" data-reveal>{tr({ es: 'Obra en ejecución', en: 'Project in progress' })}</span>
+          <h2 data-reveal>{tr({ es: 'Planta Promaíz — registro de obra, Mayo 2026.', en: 'Promaíz Plant — site footage, May 2026.' })}</h2>
         </div>
 
         <div className="vs-stage" data-reveal>
@@ -84,11 +86,11 @@ export default function VideoShowcase() {
                   preload="auto"
                 />
               ) : (
-                <button className="vs-facade" onClick={() => setPlaying(true)} aria-label="Reproducir video de obra">
+                <button className="vs-facade" onClick={() => setPlaying(true)} aria-label={tr({ es: 'Reproducir video de obra', en: 'Play site video' })}>
                   <img
                     className="vs-poster"
                     src={POSTER}
-                    alt="Planta Promaíz — aislación térmica industrial en obra, Mayo 2026"
+                    alt={tr({ es: 'Planta Promaíz — aislación térmica industrial en obra, Mayo 2026', en: 'Promaíz Plant — industrial thermal insulation on site, May 2026' })}
                     loading="lazy"
                   />
                   <span className="vs-scrim" aria-hidden="true" />
@@ -96,7 +98,7 @@ export default function VideoShowcase() {
 
                   <span className="vs-hud vs-top" aria-hidden="true">
                     <span className="vs-rec"><span className="rdot" />REC</span>
-                    <span className="vs-tag">REGISTRO AÉREO DE OBRA</span>
+                    <span className="vs-tag">{tr({ es: 'REGISTRO AÉREO DE OBRA', en: 'AERIAL SITE FOOTAGE' })}</span>
                   </span>
 
                   <span className="vs-play">
@@ -105,7 +107,7 @@ export default function VideoShowcase() {
                   </span>
 
                   <span className="vs-hud vs-bottom" aria-hidden="true">
-                    <span className="vs-loc"><Icon name="pin" />Planta Promaíz · Córdoba</span>
+                    <span className="vs-loc"><Icon name="pin" />{tr({ es: 'Planta Promaíz · Córdoba', en: 'Promaíz Plant · Córdoba' })}</span>
                     <span className="vs-time">02:15</span>
                   </span>
                 </button>
@@ -115,10 +117,10 @@ export default function VideoShowcase() {
         </div>
 
         <div className="vs-meta" data-reveal>
-          <span className="vs-chip">Agroindustria</span>
-          <span className="vs-chip">Columnas · cañerías · equipos</span>
-          <span className="vs-chip">Aislación en proceso</span>
-          <span className="vs-chip">Mayo 2026</span>
+          <span className="vs-chip">{tr({ es: 'Agroindustria', en: 'Agribusiness' })}</span>
+          <span className="vs-chip">{tr({ es: 'Columnas · cañerías · equipos', en: 'Columns · piping · equipment' })}</span>
+          <span className="vs-chip">{tr({ es: 'Aislación en proceso', en: 'Insulation in progress' })}</span>
+          <span className="vs-chip">{tr({ es: 'Mayo 2026', en: 'May 2026' })}</span>
         </div>
       </div>
     </section>

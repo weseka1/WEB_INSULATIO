@@ -43,12 +43,10 @@ Para cambiar fotos: reemplazá los archivos en `public/assets/` (mismo nombre) o
 | Frío | `#2bace2` → `#2a3c90` |
 | Negro logo | `#231f20` |
 
-## Pendiente
+## Deploy
 
-- [ ] **Asistente IA** (chatbot) — se integra en una segunda etapa, con backend real. No incluido todavía.
-- [ ] Optimizar imágenes (WebP/compresión) antes de subir a producción.
-- [ ] Confirmar cifras (m² totales) con el cliente.
-- [ ] SEO final + analytics + formulario conectado al CRM.
+Sitio estático. `npm run build` genera `/dist`, que se sirve en cualquier hosting estático.
+Configurado para **Render** vía `render.yaml` (build + publish + dominio). Node pineado en `.node-version`.
 
 ---
 Desarrollado por **WESEKA.IA**

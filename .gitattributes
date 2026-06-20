@@ -1,0 +1,11 @@
+# Normaliza saltos de línea (repo siempre LF) — evita ruido CRLF en Windows
+* text=auto eol=lf
+# Binarios: que Git no intente convertirlos
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.ico  binary
+*.mp4  binary
+*.woff  binary
+*.woff2 binary

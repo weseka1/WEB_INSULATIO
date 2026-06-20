@@ -10,6 +10,7 @@ const LINKS = [
   ['#obras', { es: 'Trabajos', en: 'Projects' }],
   ['#nosotros', { es: 'Nosotros', en: 'About' }],
   ['#contacto', { es: 'Contacto', en: 'Contact' }],
+  ['#clientes', { es: 'Clientes', en: 'Clients' }],
 ]
 
 function LangToggle() {
